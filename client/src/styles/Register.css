@@ -1,0 +1,45 @@
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form {
+  width: 350px;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.register-form h1,
+.register-form h2 {
+  text-align: center;
+}
+
+.register-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.register-form input,
+.register-form select,
+.register-form button {
+  width: 100%;
+  padding: 10px;
+}
+
+.register-form button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
