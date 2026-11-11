@@ -1,45 +1,83 @@
 
+/* Main registration page layout */
 .register-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f5f5f5;
 }
 
+/* Registration form container */
 .register-form {
   width: 350px;
+  max-width: calc(100% - 32px);
   padding: 25px;
-  border: 1px solid #ccc;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
+/* Page headings */
 .register-form h1,
 .register-form h2 {
   text-align: center;
 }
 
+/* Labels displayed above each input */
 .register-form label {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
+/* Input fields and role dropdown */
 .register-form input,
-.register-form select,
-.register-form button {
+.register-form select {
   width: 100%;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
+/* Sign Up button */
 .register-form button {
+  width: 100%;
+  padding: 12px;
   margin-top: 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.error {
-  color: red;
+/* Button changes colour when hovered */
+.register-form button:hover {
+  background-color: #1d4ed8;
 }
 
-.success {
-  color: green;
+/* Button appearance while registration is processing */
+.register-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Registration feedback messages */
+.register-error {
+  color: #dc2626;
+  text-align: center;
+}
+
+.register-success {
+  color: #15803d;
+  text-align: center;
+}
+
+/* Link to the login page */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
 }
