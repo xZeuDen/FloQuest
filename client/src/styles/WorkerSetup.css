@@ -1,0 +1,264 @@
+
+/* Main page background */
+.worker-setup-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: radial-gradient(
+    circle at top,
+    #15283d 0%,
+    #0b111b 45%,
+    #080c13 100%
+  );
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+/* Keeps the setup form centred */
+.worker-setup-container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Page heading */
+.worker-setup-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.worker-setup-logo {
+  color: #38bdf8;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.worker-setup-header h1 {
+  margin: 20px 0 10px;
+  font-size: 30px;
+}
+
+.worker-setup-header p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Cards containing each section of the form */
+.worker-setup-card {
+  padding: 28px;
+  margin-bottom: 22px;
+  background-color: #141d2b;
+  border: 1px solid #29374b;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.worker-setup-card h2 {
+  font-size: 19px;
+  margin: 0 0 10px;
+}
+
+.worker-setup-card p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Category selection buttons */
+.worker-setup-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.worker-category-button {
+  padding: 12px 17px;
+  background-color: #202b3b;
+  color: #cbd5e1;
+  border: 1px solid #35445a;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.worker-category-button:hover {
+  border-color: #38bdf8;
+  background-color: #26384d;
+}
+
+/* Highlight categories that the worker has selected */
+.worker-category-button.selected {
+  background-color: #173f57;
+  border-color: #38bdf8;
+  color: white;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
+}
+
+.worker-setup-count {
+  margin-top: 20px;
+}
+
+/* Location detection button */
+.worker-location-button {
+  margin-top: 15px;
+  padding: 13px 22px;
+  background-color: #202e42;
+  color: #67d4ff;
+  border: 1px solid #3a5b7a;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.worker-location-button:hover {
+  background-color: #29445f;
+}
+
+.worker-location-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.worker-location-success {
+  color: #4ade80 !important;
+  margin-top: 16px;
+}
+
+/* Travel radius heading and current value */
+.worker-radius-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.worker-radius-value {
+  padding: 10px 18px;
+  background-color: #193b55;
+  color: #67d4ff;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.worker-slider-label {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* Custom travel distance slider */
+.worker-radius-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    #3b82f6 0%,
+    #22d3ee var(--slider-progress),
+    #2b374a var(--slider-progress),
+    #2b374a 100%
+  );
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Round slider handle for Chrome and Edge */
+.worker-radius-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 23px;
+  background: #38bdf8;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+
+/* Round slider handle for Firefox */
+.worker-radius-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #38bdf8;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+
+.worker-radius-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* Main save button */
+.worker-save-button {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  margin-top: 25px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  transition: 0.2s;
+}
+
+.worker-save-button:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+}
+
+.worker-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error and loading messages */
+.worker-setup-error {
+  color: #fca5a5;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.worker-setup-loading {
+  text-align: center;
+  padding: 60px;
+}
+
+/* Show a visible outline when navigating with the keyboard */
+.worker-setup-page button:focus-visible,
+.worker-radius-slider:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 3px;
+}
+
+/* Adjust the layout for mobile screens */
+@media (max-width: 600px) {
+  .worker-setup-page {
+    padding: 30px 15px;
+  }
+
+  .worker-setup-card {
+    padding: 20px;
+  }
+
+  .worker-setup-header h1 {
+    font-size: 25px;
+  }
+
+  .worker-category-button {
+    font-size: 13px;
+  }
+}
