@@ -286,11 +286,11 @@ function WorkerSetup() {
               📍 {gettingLocation ? 'Finding location...' : 'Use my current location'}
             </button>
 
+            {/* Confirm that the worker's location has been detected */}
             {location && (
-              <p className="worker-location-success">
-                ✓ Location saved: {location.latitude.toFixed(4)},
-                {' '}{location.longitude.toFixed(4)}
-              </p>
+            <p className="worker-location-success">
+            ✓ Location saved successfully
+            </p>
             )}
           </section>
 
@@ -316,18 +316,18 @@ function WorkerSetup() {
               className="worker-radius-slider"
               type="range"
               min="1"
-              max="50"
+              max="100"
               step="1"
               value={travelRadius}
               onChange={(e) => setTravelRadius(Number(e.target.value))}
               style={{
-                '--slider-progress': `${((travelRadius - 1) / 49) * 100}%`
+                '--slider-progress': `${((travelRadius - 1) / 99) * 100}%`
               }}
             />
 
             <div className="worker-radius-labels">
               <span>1 km</span>
-              <span>50 km</span>
+              <span>100 km</span>
             </div>
           </section>
 
