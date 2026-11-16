@@ -1,6 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { supabase } from '../lib/supabaseClient';
+import WorkerAvailability from '../components/WorkerAvailability';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -113,7 +115,12 @@ function Dashboard() {
 
       <p>You are logged in as a {profile.role}.</p>
 
-      {/* Workers can return to their setup page to change their details */}
+      {/* Only workers can see and change their availability */}
+      {profile.role === 'worker' && (
+        <WorkerAvailability />
+      )}
+
+      {/* Workers can edit their categories, location and travel radius */}
       {profile.role === 'worker' && (
         <p>
           <Link to="/worker-setup">Edit Worker Profile</Link>
