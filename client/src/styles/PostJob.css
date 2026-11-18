@@ -1,0 +1,196 @@
+
+/* Main job posting page */
+.post-job-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: radial-gradient(
+    circle at top,
+    #15283d 0%,
+    #0b111b 45%,
+    #080c13 100%
+  );
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for the job posting form */
+.post-job-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.post-job-container h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.post-job-container > p {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* Main form card */
+.post-job-container form {
+  padding: 30px;
+  background-color: #141d2b;
+  border: 1px solid #29374b;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Labels displayed above each field */
+.post-job-container label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 9px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Job title, price, duration, category and description */
+.post-job-container input,
+.post-job-container select,
+.post-job-container textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #202b3b;
+  color: #f8fafc;
+  border: 1px solid #35445a;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.post-job-container textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Placeholder text */
+.post-job-container input::placeholder,
+.post-job-container textarea::placeholder {
+  color: #8290a3;
+}
+
+/* Highlight the field currently being used */
+.post-job-container input:focus,
+.post-job-container select:focus,
+.post-job-container textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+}
+
+/* Job location section */
+.post-job-location {
+  margin-top: 30px;
+  padding: 22px;
+  background-color: #1b2939;
+  border: 1px solid #30445a;
+  border-radius: 16px;
+}
+
+.post-job-location h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.post-job-location p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Button for detecting the customer's location */
+.post-job-location button {
+  margin-top: 10px;
+  padding: 13px 20px;
+  background-color: #203d58;
+  color: #67d4ff;
+  border: 1px solid #3a6b91;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.post-job-location button:hover {
+  background-color: #294e70;
+}
+
+.post-job-location button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Green message when location is detected */
+.post-job-location .post-job-location-success {
+  color: #4ade80;
+  margin-top: 15px;
+}
+
+/* Error and success messages after submitting */
+.post-job-error {
+  color: #fca5a5;
+  margin-top: 20px;
+}
+
+.post-job-success {
+  color: #4ade80;
+  margin-top: 20px;
+}
+
+/* Main Post Job button */
+.post-job-submit {
+  width: 100%;
+  padding: 16px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  transition: 0.2s;
+}
+
+.post-job-submit:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+}
+
+.post-job-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Visible outlines for keyboard users */
+.post-job-container button:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 3px;
+}
+
+/* Make the form fit smaller screens */
+@media (max-width: 600px) {
+  .post-job-page {
+    padding: 30px 15px;
+  }
+
+  .post-job-container h1 {
+    font-size: 26px;
+  }
+
+  .post-job-container form {
+    padding: 20px;
+  }
+
+  .post-job-location {
+    padding: 18px;
+  }
+}

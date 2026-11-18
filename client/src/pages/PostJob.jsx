@@ -1,7 +1,7 @@
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { supabase } from '../lib/supabaseClient';
+import '../styles/PostJob.css';
 
 function PostJob() {
   const navigate = useNavigate();
