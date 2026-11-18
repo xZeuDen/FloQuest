@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { supabase } from '../lib/supabaseClient';
 import WorkerAvailability from '../components/WorkerAvailability';
+import '../styles/Dashboard.css';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -114,6 +115,20 @@ function Dashboard() {
       </h2>
 
       <p>You are logged in as a {profile.role}.</p>
+
+
+      {/* Only customers can access the job posting page */}
+      {profile.role === 'customer' && (
+        <div>
+          <h3>Need help with something?</h3>
+          <p>Create a job and find a worker near you.</p>
+
+          <Link to="/post-job" className="post-job-link">
+            + Post a Job
+          </Link>
+        </div>
+      )}
+
 
       {/* Only workers can see and change their availability */}
       {profile.role === 'worker' && (

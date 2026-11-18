@@ -1,0 +1,16 @@
+/* Button used to open the customer job posting page */
+.post-job-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 22px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.post-job-link:hover {
+  filter: brightness(1.15);
+}

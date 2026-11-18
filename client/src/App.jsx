@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from 'react-router';
 
 import Register from './pages/Register';
@@ -10,18 +9,23 @@ import PostJob from './pages/PostJob';
 function App() {
   return (
     <Routes>
-      {/* Send users to login when they first visit */}
+      {/* Redirect users to login when they first visit */}
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       {/* Authentication pages */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Dashboard and worker profile setup */}
+      {/* Main dashboard */}
       <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* Worker profile setup */}
       <Route path="/worker-setup" element={<WorkerSetup />} />
 
-      {/* Redirect unknown URLs back to login */}
+      {/* Customer job posting */}
+      <Route path="/post-job" element={<PostJob />} />
+
+      {/* Redirect unknown URLs to login */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
