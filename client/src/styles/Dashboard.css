@@ -14,3 +14,35 @@
 .post-job-link:hover {
   filter: brightness(1.15);
 }
+
+/* Keeps the customer's dashboard buttons together */
+.customer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Button linking to the customer's posted jobs */
+.my-jobs-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 22px;
+  background-color: #1b2939;
+  color: #67d4ff;
+  border: 1px solid #3a6b91;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.my-jobs-link:hover {
+  background-color: #29445f;
+}
+
+.my-jobs-link:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 3px;
+}

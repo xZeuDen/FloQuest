@@ -116,19 +116,23 @@ function Dashboard() {
 
       <p>You are logged in as a {profile.role}.</p>
 
-
-      {/* Only customers can access the job posting page */}
+      {/* Customers can post new jobs or view jobs they have created */}
       {profile.role === 'customer' && (
         <div>
-          <h3>Need help with something?</h3>
-          <p>Create a job and find a worker near you.</p>
+          <h3>Manage Your Jobs</h3>
+          <p>Post a new job or check the jobs you've already created.</p>
 
-          <Link to="/post-job" className="post-job-link">
-            + Post a Job
-          </Link>
+          <div className="customer-actions">
+            <Link to="/post-job" className="post-job-link">
+              + Post a Job
+            </Link>
+
+            <Link to="/my-jobs" className="my-jobs-link">
+              View My Jobs
+            </Link>
+          </div>
         </div>
       )}
-
 
       {/* Only workers can see and change their availability */}
       {profile.role === 'worker' && (
@@ -142,6 +146,7 @@ function Dashboard() {
         </p>
       )}
 
+      {/* Both customers and workers can log out */}
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

@@ -1,5 +1,6 @@
+
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { supabase } from '../lib/supabaseClient';
 import '../styles/PostJob.css';
 
@@ -308,6 +309,24 @@ function PostJob() {
           </button>
 
         </form>
+
+        {/* Navigation links below the form */}
+        <div className="post-job-navigation">
+
+          {/* Return to the customer dashboard at any time */}
+          <Link to="/dashboard" className="post-job-back">
+            ← Back to Dashboard
+          </Link>
+
+          {/* Only show this link after a job is posted successfully */}
+          {success && (
+            <Link to="/my-jobs" className="post-job-view">
+              View My Jobs →
+            </Link>
+          )}
+
+        </div>
+
       </div>
     </div>
   );

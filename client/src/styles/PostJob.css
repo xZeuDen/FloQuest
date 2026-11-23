@@ -194,3 +194,46 @@
     padding: 18px;
   }
 }
+
+/* Navigation links below the job posting form */
+.post-job-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.post-job-back,
+.post-job-view {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* Return to dashboard button */
+.post-job-back {
+  background-color: #1b2939;
+  color: #67d4ff;
+  border: 1px solid #3a6b91;
+}
+
+/* View posted jobs button */
+.post-job-view {
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+}
+
+.post-job-back:hover,
+.post-job-view:hover {
+  filter: brightness(1.15);
+}
+
+.post-job-back:focus-visible,
+.post-job-view:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 3px;
+}

@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import WorkerSetup from './pages/WorkerSetup';
 import PostJob from './pages/PostJob';
+import MyJobs from './pages/MyJobs';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
 
       {/* Customer job posting */}
       <Route path="/post-job" element={<PostJob />} />
+
+      {/* Customers can view their posted jobs */}
+      <Route path="/my-jobs" element={<MyJobs />} />
 
       {/* Redirect unknown URLs to login */}
       <Route path="*" element={<Navigate to="/login" replace />} />
