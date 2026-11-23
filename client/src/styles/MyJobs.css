@@ -1,0 +1,228 @@
+
+/* Main My Jobs page */
+.my-jobs-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: radial-gradient(
+    circle at top,
+    #15283d 0%,
+    #0b111b 45%,
+    #080c13 100%
+  );
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+/* Keeps the content centred */
+.my-jobs-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Page heading and new job button */
+.my-jobs-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.my-jobs-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.my-jobs-header p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* Button for creating another job */
+.my-jobs-add-button {
+  display: inline-block;
+  padding: 13px 25px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  transition: 0.2s;
+}
+
+.my-jobs-add-button:hover {
+  filter: brightness(1.15);
+}
+
+/* Container for all the job cards */
+.my-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual job card */
+.my-job-card {
+  padding: 25px;
+  background-color: #141d2b;
+  border: 1px solid #29374b;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+
+.my-job-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.12);
+}
+
+/* Job title and status */
+.my-job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.my-job-top h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+/* Rounded status labels */
+.my-job-status {
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Different colours depending on the job status */
+.my-job-status.open {
+  background-color: #153f30;
+  color: #4ade80;
+}
+
+.my-job-status.assigned {
+  background-color: #193b55;
+  color: #67d4ff;
+}
+
+.my-job-status.in_progress {
+  background-color: #453518;
+  color: #facc15;
+}
+
+.my-job-status.completed {
+  background-color: #263d35;
+  color: #86efac;
+}
+
+.my-job-status.cancelled {
+  background-color: #45232a;
+  color: #fca5a5;
+}
+
+/* Job category */
+.my-job-category {
+  color: #38bdf8;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* Job description */
+.my-job-description {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Price and estimated duration */
+.my-job-details {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #29374b;
+  font-weight: bold;
+}
+
+.my-job-details span:first-child {
+  color: #4ade80;
+}
+
+.my-job-details span:last-child {
+  color: #e2e8f0;
+}
+
+/* Date when the job was posted */
+.my-job-date {
+  margin-top: 18px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Message when the customer has no jobs */
+.my-jobs-empty {
+  padding: 50px 25px;
+  text-align: center;
+  background-color: #141d2b;
+  border: 1px solid #29374b;
+  border-radius: 20px;
+}
+
+.my-jobs-empty h2 {
+  margin-top: 0;
+}
+
+.my-jobs-empty p {
+  color: #94a3b8;
+}
+
+/* Return to dashboard link */
+.my-jobs-back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #67d4ff;
+  text-decoration: none;
+}
+
+.my-jobs-back:hover {
+  text-decoration: underline;
+}
+
+/* Visible focus for keyboard navigation */
+.my-jobs-page a:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 4px;
+}
+
+/* Adjust job cards for mobile screens */
+@media (max-width: 600px) {
+  .my-jobs-page {
+    padding: 30px 15px;
+  }
+
+  .my-jobs-header h1 {
+    font-size: 26px;
+  }
+
+  .my-job-card {
+    padding: 20px;
+  }
+
+  .my-job-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .my-job-top h2 {
+    font-size: 19px;
+  }
+
+  .my-job-details {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
