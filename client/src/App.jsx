@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import WorkerSetup from './pages/WorkerSetup';
 import PostJob from './pages/PostJob';
 import MyJobs from './pages/MyJobs';
+import WorkerJobs from './pages/WorkerJobs';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
 
       {/* Customers can view their posted jobs */}
       <Route path="/my-jobs" element={<MyJobs />} />
+
+      {/* Workers can discover matching jobs nearby */}
+      <Route path="/worker-jobs" element={<WorkerJobs />} />
 
       {/* Redirect unknown URLs to login */}
       <Route path="*" element={<Navigate to="/login" replace />} />

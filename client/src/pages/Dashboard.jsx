@@ -18,6 +18,7 @@ function Dashboard() {
 
     const loadDashboard = async () => {
       try {
+        // Get the currently logged-in user from Supabase
         const { data: { user }, error: authError } =
           await supabase.auth.getUser();
 
@@ -42,7 +43,7 @@ function Dashboard() {
         // Workers must complete their profile before using the dashboard
         if (data.role === 'worker') {
 
-          // Check whether worker details have been saved
+          // Check whether the worker has saved their location and radius
           const { data: workerProfile, error: workerError } =
             await supabase
               .from('worker_profiles')
@@ -52,7 +53,7 @@ function Dashboard() {
 
           if (workerError) throw workerError;
 
-          // Check that the worker has selected at least one category
+          // Check that the worker has selected at least one job category
           const { count, error: categoryError } = await supabase
             .from('worker_categories')
             .select('category_id', { count: 'exact', head: true })
@@ -61,24 +62,30 @@ function Dashboard() {
           if (categoryError) throw categoryError;
           if (!active) return;
 
-          // Redirect workers who have not completed their setup
+          // Redirect workers who haven't completed their setup
           if (!workerProfile || !count) {
             navigate('/worker-setup', { replace: true });
             return;
           }
         }
 
+        // Save the profile so we can display the correct dashboard
         setProfile(data);
 
       } catch (err) {
-        if (active) setError(err.message);
+        if (active) {
+          setError(err.message || 'Could not load the dashboard.');
+        }
       } finally {
-        if (active) setLoading(false);
+        if (active) {
+          setLoading(false);
+        }
       }
     };
 
     loadDashboard();
 
+    // Prevent state updates if the component is unmounted
     return () => {
       active = false;
     };
@@ -96,10 +103,12 @@ function Dashboard() {
     navigate('/login', { replace: true });
   };
 
+  // Show a loading message while checking the user
   if (loading) {
     return <p>Loading dashboard...</p>;
   }
 
+  // Display any Supabase errors
   if (error) {
     return <p>Error: {error}</p>;
   }
@@ -108,6 +117,7 @@ function Dashboard() {
     <div>
       <h1>Welcome, {profile.full_name}!</h1>
 
+      {/* Display a different heading based on the user's role */}
       <h2>
         {profile.role === 'customer'
           ? 'Customer Dashboard'
@@ -116,13 +126,17 @@ function Dashboard() {
 
       <p>You are logged in as a {profile.role}.</p>
 
-      {/* Customers can post new jobs or view jobs they have created */}
+      {/* Customers can post jobs and view jobs they have already created */}
       {profile.role === 'customer' && (
         <div>
           <h3>Manage Your Jobs</h3>
-          <p>Post a new job or check the jobs you've already created.</p>
+
+          <p>
+            Post a new job or check the jobs you've already created.
+          </p>
 
           <div className="customer-actions">
+
             <Link to="/post-job" className="post-job-link">
               + Post a Job
             </Link>
@@ -130,24 +144,37 @@ function Dashboard() {
             <Link to="/my-jobs" className="my-jobs-link">
               View My Jobs
             </Link>
+
           </div>
         </div>
       )}
 
-      {/* Only workers can see and change their availability */}
+      {/* Show worker-specific features only for worker accounts */}
       {profile.role === 'worker' && (
-        <WorkerAvailability />
-      )}
+        <div className="worker-dashboard-section">
 
-      {/* Workers can edit their categories, location and travel radius */}
-      {profile.role === 'worker' && (
-        <p>
-          <Link to="/worker-setup">Edit Worker Profile</Link>
-        </p>
+          {/* Workers can switch their availability ON or OFF */}
+          <WorkerAvailability />
+
+          {/* Workers can discover matching jobs or update their profile */}
+          <div className="worker-dashboard-actions">
+
+            <Link to="/worker-jobs" className="worker-jobs-link">
+              Find Jobs Near Me
+            </Link>
+
+            <Link to="/worker-setup" className="worker-setup-link">
+              Edit Worker Profile
+            </Link>
+
+          </div>
+        </div>
       )}
 
       {/* Both customers and workers can log out */}
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 }

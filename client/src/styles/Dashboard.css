@@ -46,3 +46,59 @@
   outline: 2px solid #67d4ff;
   outline-offset: 3px;
 }
+
+
+/* Worker dashboard section */
+.worker-dashboard-section {
+  margin-top: 25px;
+}
+
+/* Navigation buttons for workers */
+.worker-dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Button for discovering nearby jobs */
+.worker-jobs-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+  transition: 0.2s;
+}
+
+.worker-jobs-link:hover {
+  filter: brightness(1.15);
+}
+
+/* Button for editing worker details */
+.worker-setup-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1b2939;
+  color: #67d4ff;
+  border: 1px solid #3a6b91;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.worker-setup-link:hover {
+  background: #29445f;
+}
+
+/* Keyboard navigation */
+.worker-jobs-link:focus-visible,
+.worker-setup-link:focus-visible {
+  outline: 2px solid #67d4ff;
+  outline-offset: 4px;
+}
