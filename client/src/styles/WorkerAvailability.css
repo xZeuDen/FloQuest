@@ -1,0 +1,59 @@
+.worker-availability {
+  max-width: 550px;
+  margin: 25px 0;
+  padding: 25px;
+  background-color: #141d2b;
+  color: white;
+  border: 1px solid #29374b;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.worker-availability h3 {
+  margin-top: 0;
+}
+
+.worker-availability p {
+  color: #94a3b8;
+}
+
+/* Rounded availability button */
+.availability-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  background-color: #334155;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Green indicates the worker is online */
+.availability-toggle.online {
+  background-color: #16a34a;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
+}
+
+/* Small circular status indicator */
+.toggle-circle {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.availability-toggle:hover {
+  filter: brightness(1.15);
+}
+
+.availability-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.worker-availability .availability-error {
+  color: #f87171;
+}
